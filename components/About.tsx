@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-[#F4F7F8]">
+    <section id="about" className="py-20 px-4 bg-near-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#1C478A]">
           About Us
@@ -11,7 +11,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
+              src="/assets/about-image.png"
               alt="Professional consultation"
               fill
               className="object-cover"

@@ -10,37 +10,45 @@ export default function Hero() {
         }} />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Welcome to Bimaah International Ltd
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Empowering lives through clarity, compassion, and advocacy.
-          </p>
-          <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            At Bimaah International Ltd, we understand that navigating immigration, benefits, and legal systems can be overwhelming—especially when you're facing personal challenges or systemic barriers. That's why we're here.
-          </p>
-          <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-            Founded by <span className="font-semibold">Olabisi Adebayo</span>, a qualified immigration adviser and passionate advocate for vulnerable communities, our mission is simple: to make expert guidance accessible to everyone. Whether you're applying for a visa, seeking benefits support, or need help drafting legal documents, we offer clear, professional advice rooted in empathy and respect.
-          </p>
-          <div className="mb-12">
-            <p className="text-2xl font-semibold italic">
-              Your Rights. Your Voice. Our Support.
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Text Content */}
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Welcome to Bimaah International Ltd
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+              Empowering lives through clarity, compassion, and advocacy.
             </p>
+            <div className="mb-12">
+              <p className="text-2xl font-semibold italic">
+                Your Rights. Your Voice. Our Support.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <a
+                href="#services"
+                className="bg-white text-[#1C478A] px-8 py-3 rounded-md font-semibold hover:bg-[#F4F7F8] transition"
+              >
+                Our Services
+              </a>
+              <a
+                href="#contact"
+                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1C478A] transition"
+              >
+                Book Consultation
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#services"
-              className="bg-white text-[#1C478A] px-8 py-3 rounded-md font-semibold hover:bg-[#F4F7F8] transition"
-            >
-              Our Services
-            </a>
-            <a
-              href="#contact"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1C478A] transition"
-            >
-              Book Consultation
-            </a>
+
+          {/* Hero Image */}
+          <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <Image
+              src="/assets/hero-image.jpg"
+              alt="Professional consultation - diverse team in meeting"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
