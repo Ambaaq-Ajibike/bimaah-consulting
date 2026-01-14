@@ -146,21 +146,33 @@ export default function Contact() {
               <Phone className="w-10 h-10 text-[#1A7EB9]" />
             </div>
             <h3 className="font-semibold text-[#1C478A] mb-2">Call Us</h3>
-            <p className="text-[#718A9D]">Available Mon-Fri</p>
+            <p className="text-[#718A9D]">
+              <a href="tel:+447903263491" className="text-[#1A7EB9] font-semibold">+44 7903 263491</a>
+            </p>
+            <p className="text-sm text-[#718A9D] mt-2">Available Mon-Fri</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow border-t-4 border-[#1A7EB9]">
             <div className="flex justify-center mb-3">
               <Mail className="w-10 h-10 text-[#1A7EB9]" />
             </div>
             <h3 className="font-semibold text-[#1C478A] mb-2">Email Us</h3>
-            <p className="text-[#718A9D]">24/7 responses</p>
+            <p className="text-[#718A9D]">
+              <a href="mailto:bimaahltd@gmail.com" className="text-[#1A7EB9] font-semibold">bimaahltd@gmail.com</a>
+            </p>
+            <p className="text-sm text-[#718A9D] mt-2">We aim to reply within 24 hours</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow border-t-4 border-[#1A7EB9]">
             <div className="flex justify-center mb-3">
               <MapPin className="w-10 h-10 text-[#1A7EB9]" />
             </div>
             <h3 className="font-semibold text-[#1C478A] mb-2">Visit Us</h3>
-            <p className="text-[#718A9D]">By appointment</p>
+            <p className="text-[#718A9D]">Toronto road, Tilbury RM18 7RL</p>
+            <p className="text-sm text-[#718A9D] mt-2">By appointment</p>
+            <div className="mt-3 text-sm text-[#718A9D]">
+              <strong className="text-[#1C478A]">Opening hours:</strong>
+              <div>Mon-Sat: 10:00am - 6:00pm</div>
+              <div>Sun: 2:00pm - 6:00pm</div>
+            </div>
           </div>
         </div>
       </div>

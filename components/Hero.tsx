@@ -26,13 +26,13 @@ export default function Hero() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="#services"
+                href="/services"
                 className="bg-white text-[#1C478A] px-8 py-3 rounded-md font-semibold hover:bg-[#F4F7F8] transition"
               >
                 Our Services
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1C478A] transition"
               >
                 Book Consultation
@@ -43,7 +43,7 @@ export default function Hero() {
           {/* Hero Image */}
           <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="/assets/hero-image.jpg"
+              src="/assets/hero-image.png"
               alt="Professional consultation - diverse team in meeting"
               fill
               className="object-cover"

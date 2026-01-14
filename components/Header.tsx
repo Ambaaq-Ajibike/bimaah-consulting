@@ -1,17 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
-
-const smoothScrollTo = (elementId: string) => {
-  const element = document.getElementById(elementId);
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  }
-};
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,48 +12,29 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-[#1C478A]">
-              Bimaah International Ltd
+            <Link href="/" className="flex items-center">
+              <Image src="/assets/bimahlogo.png" alt="Bimaah International Ltd" width={80} height={80} />
+              <span className="text-xl font-bold text-navy">Bimaah International Ltd</span>
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <a 
-              href="#about" 
-              onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); }}
-              className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium cursor-pointer"
-            >
+            <Link href="/about" className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium">
               About
-            </a>
-            <a 
-              href="#services" 
-              onClick={(e) => { e.preventDefault(); smoothScrollTo('services'); }}
-              className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium cursor-pointer"
-            >
+            </Link>
+            <Link href="/services" className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium">
               Services
-            </a>
-            <a 
-              href="#testimonials" 
-              onClick={(e) => { e.preventDefault(); smoothScrollTo('testimonials'); }}
-              className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium cursor-pointer"
-            >
+            </Link>
+            <Link href="/testimonials" className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium">
               Testimonials
-            </a>
-            <a 
-              href="#faq" 
-              onClick={(e) => { e.preventDefault(); smoothScrollTo('faq'); }}
-              className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium cursor-pointer"
-            >
+            </Link>
+            <Link href="/faq" className="text-[#718A9D] hover:text-[#1A7EB9] transition font-medium">
               FAQ
-            </a>
-            <a 
-              href="#contact" 
-              onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); }}
-              className="bg-[#1A7EB9] text-white px-4 py-2 rounded-md hover:bg-[#1B60A3] transition cursor-pointer"
-            >
+            </Link>
+            <Link href="/contact" className="bg-[#1A7EB9] text-white px-4 py-2 rounded-md hover:bg-[#1B60A3] transition">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -86,41 +58,21 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-3">
-              <a 
-                href="#about" 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('about'); setMobileMenuOpen(false); }}
-                className="text-[#718A9D] hover:text-[#1A7EB9] font-medium cursor-pointer"
-              >
+              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-[#718A9D] hover:text-[#1A7EB9] font-medium">
                 About
-              </a>
-              <a 
-                href="#services" 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('services'); setMobileMenuOpen(false); }}
-                className="text-[#718A9D] hover:text-[#1A7EB9] font-medium cursor-pointer"
-              >
+              </Link>
+              <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-[#718A9D] hover:text-[#1A7EB9] font-medium">
                 Services
-              </a>
-              <a 
-                href="#testimonials" 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('testimonials'); setMobileMenuOpen(false); }}
-                className="text-[#718A9D] hover:text-[#1A7EB9] font-medium cursor-pointer"
-              >
+              </Link>
+              <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)} className="text-[#718A9D] hover:text-[#1A7EB9] font-medium">
                 Testimonials
-              </a>
-              <a 
-                href="#faq" 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('faq'); setMobileMenuOpen(false); }}
-                className="text-[#718A9D] hover:text-[#1A7EB9] font-medium cursor-pointer"
-              >
+              </Link>
+              <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="text-[#718A9D] hover:text-[#1A7EB9] font-medium">
                 FAQ
-              </a>
-              <a 
-                href="#contact" 
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('contact'); setMobileMenuOpen(false); }}
-                className="bg-[#1A7EB9] text-white px-4 py-2 rounded-md hover:bg-[#1B60A3] text-center cursor-pointer"
-              >
+              </Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="bg-[#1A7EB9] text-white px-4 py-2 rounded-md hover:bg-[#1B60A3] text-center">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         )}

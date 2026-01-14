@@ -56,7 +56,7 @@ export default function Services() {
             All services are provided with professionalism, confidentiality, and care.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-[#1A7EB9] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1B60A3] transition"
           >
             Book Your Free Consultation
