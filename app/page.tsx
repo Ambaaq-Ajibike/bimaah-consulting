@@ -1,63 +1,69 @@
-import Hero from '@/components/Hero';
+import Image from 'next/image';
 import Link from 'next/link';
+
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <Hero />
+    <div className="bg-white">
+      {/* Full-height hero image */}
+      <section className="relative h-screen w-full overflow-hidden">
+        <Image
+          src="/assets/hero2.jpg"
+          alt="Bimaah International consultation"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/45" aria-hidden />
+      </section>
 
-        <section className="py-12 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-[#1C478A] mb-8">Explore Bimaah</h2>
-            <p className="text-center text-[#718A9D] mb-8">
-              Quick links to the areas most visitors look for — concise summaries with direct links.
+      {/* Services */}
+      <section className="bg-navy text-center text-white py-16 px-4">
+        <div className="mx-auto">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold">OUR SERVICES</h2>
+            <p className="text-white/80 mt-4 leading-relaxed max-w-4xl mx-auto">
+              From complex visa applications and immigration appeals to benefits assessments and welfare support, we provide expert legal documentation and advocacy services tailored to your unique circumstances. Our experienced team ensures you understand every stage of the process, empowering you with the clarity and confidence needed to navigate challenging situations with dignity and assurance.
             </p>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <article className="p-6 bg-[#F4F7F8] rounded-lg shadow">
-                <h3 className="text-xl font-semibold text-[#1C478A]">About Us</h3>
-                <p className="text-[#718A9D] mt-2">Who we are, our mission, and the experience Olabisi brings to every client.</p>
-                <div className="mt-4">
-                  <Link href="/about" className="text-[#1A7EB9] font-semibold">Learn more →</Link>
-                </div>
-              </article>
-
-              <article className="p-6 bg-white rounded-lg shadow border border-[#97C5D9]">
-                <h3 className="text-xl font-semibold text-[#1C478A]">Services</h3>
-                <p className="text-[#718A9D] mt-2">Immigration advice, benefits support and legal document assistance tailored to you.</p>
-                <div className="mt-4">
-                  <Link href="/services" className="text-[#1A7EB9] font-semibold">See services →</Link>
-                </div>
-              </article>
-
-              <article className="p-6 bg-[#F4F7F8] rounded-lg shadow">
-                <h3 className="text-xl font-semibold text-[#1C478A]">Testimonials</h3>
-                <p className="text-[#718A9D] mt-2">Read stories from clients we've supported through complex cases.</p>
-                <div className="mt-4">
-                  <Link href="/testimonials" className="text-[#1A7EB9] font-semibold">Read testimonials →</Link>
-                </div>
-              </article>
-
-              <article className="p-6 bg-white rounded-lg shadow border border-[#97C5D9]">
-                <h3 className="text-xl font-semibold text-[#1C478A]">FAQ</h3>
-                <p className="text-[#718A9D] mt-2">Common questions about our services, booking, and what to bring to appointments.</p>
-                <div className="mt-4">
-                  <Link href="/faq" className="text-[#1A7EB9] font-semibold">View FAQ →</Link>
-                </div>
-              </article>
-
-              <article className="p-6 bg-[#F4F7F8] rounded-lg shadow">
-                <h3 className="text-xl font-semibold text-[#1C478A]">Contact</h3>
-                <p className="text-[#718A9D] mt-2">Book a free consultation by phone, email or our online form.</p>
-                <div className="mt-4">
-                  <Link href="/contact" className="text-[#1A7EB9] font-semibold">Get in touch →</Link>
-                </div>
-              </article>
-            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Call us */}
+      <section className="bg-white text-center text-navy py-16 px-4">
+        <div className="mx-auto">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold">CALL US FOR ADVICE</h2>
+            <p>
+              Call us now on{' '}
+              <Link href="tel:+447903263491" className="text-[#1A7EB9] font-semibold hover:text-[#1B60A3]">
+                +44 7903 263491
+              </Link>
+              {" "}
+              or send us an e-mail at{' '}
+              <Link href="mailto:bimaahltd@gmail.com" className="text-[#1A7EB9] font-semibold hover:text-[#1B60A3]">
+                bimaahltd@gmail.com
+              </Link>
+            </p>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* Tagline + supporting image */}
+      <section className="relative w-full h-64 sm:h-80 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80"
+          alt="Professional consultation"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/60" />
+        <div className="relative z-10 flex items-center justify-center h-full px-4">
+          <p className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+            Your Rights. Your Voice. Our Support.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
