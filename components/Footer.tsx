@@ -30,6 +30,9 @@ export default function Footer() {
           <p className="text-white font-semibold text-lg">
             Your Rights. Your Voice. Our Support.
           </p>
+          <p className="text-[#97C5D9] text-sm pt-2">
+            Registration Number: N202537994
+          </p>
         </div>
       </div>
     </footer>
