@@ -37,7 +37,7 @@ export default function FAQ() {
     },
     {
       question: "Is my information kept confidential?",
-      answer: "Absolutely. We treat all client information with the highest level of confidentiality and professionalism. Your trust is central to our work."
+      answer: "Absolutely. We treat all client information with the highest level of confidentiality inline with Immigration Advice Authority  code of  standards."
     },
     {
       question: "What if I need urgent help?",
