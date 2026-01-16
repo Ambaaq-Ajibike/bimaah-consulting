@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,13 +14,58 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit consultation request');
+      }
+
+      // Show success toast
+      toast.success('Request Submitted!', {
+        description: 'Thank you for your consultation request. We\'ll get back to you within 24 hours. Please check your email for confirmation.',
+        duration: 8000,
+      });
+
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+      setTimeout(() => setSubmitted(false), 10000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred. Please try again.';
+      
+      // Show error toast
+      toast.error('Submission Failed', {
+        description: errorMessage,
+        duration: 6000,
+      });
+      
+      setError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -38,12 +84,6 @@ export default function Contact() {
         <p className="text-center text-[#718A9D] mb-12 text-lg">
           Book your free consultation today
         </p>
-
-        {submitted && (
-          <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            Thank you! We'll get back to you within 24 hours.
-          </div>
-        )}
 
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -130,9 +170,10 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-[#1A7EB9] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#1B60A3] transition"
+            disabled={isSubmitting}
+            className="w-full bg-[#1A7EB9] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#1B60A3] transition disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            Submit Consultation Request
+            {isSubmitting ? 'Submitting...' : 'Submit Consultation Request'}
           </button>
 
           <p className="text-sm text-[#718A9D] mt-4 text-center">
